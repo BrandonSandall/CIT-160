@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+       <form>
+           <p>Enter volume in quarts:</p>
+           <input id="quarts" type="number" required>
+           
+           <button type="button" onclick="calculate()">Submit</button>
+                
+           <p>Conversion to liters: <span id="answer"></span></p>
+        </form>
+        
+        <script>
+            var quarts,
+                answer,
+                liters = .946353;
+            
+            function calculate() {
+                quarts = parseFloat(document.getElementById("quarts").value);
+                answer = quarts * liters;
+                answer = Math.round(100 * answer)/100;
+                document.getElementById("answer").innerHTML = answer;
+            };
+            
+        </script>
+        
+    </body>
+</html>
