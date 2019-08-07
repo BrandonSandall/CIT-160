@@ -13,7 +13,7 @@
            <input id="endOdometer" type="number" required>
            <p>Gallons of gasoline:</p>
            <input id="gallons" type="number" required>
-           <button id="submit" type="button">Submit</button>
+           <button id="submit" type="button" onclick="calculate()">Submit</button>
            <p>Miles per gallon: <span id="answer"></span></p>
         </form>
        
@@ -39,7 +39,6 @@
                 document.getElementById("answer").innerHTML = a;
             };
             
-            submit.addEventListener("click", calculate);
         </script>
         
     </body>
