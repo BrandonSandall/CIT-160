@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+
+        <form>
+           <p>Beginning odometer:</p>
+           <input id="begOdometer" type="number" required>
+           <p>Ending odometer:</p>
+           <input id="endOdometer" type="number" required>
+           <p>Gallons of gasoline:</p>
+           <input id="gallons" type="number" required>
+           <button id="submit" type="button">Submit</button>
+           <p>Miles per gallon: <span id="answer"></span></p>
+        </form>
+       
+        
+        <script>
+            var begOdometer,
+                endOdometer,
+                gallons,
+                a,
+                submit = document.getElementById("submit");
+            
+            function calculate() {
+                begOdometer = parseFloat(document.getElementById("begOdometer").value);
+                endOdometer = parseFloat(document.getElementById("endOdometer").value);
+                gallons = parseFloat(document.getElementById("gallons").value);
+                
+                if (begOdometer > endOdometer) {
+                    a = "Did you drive backwards?";
+                } else {
+                    a = (endOdometer - begOdometer) / gallons;
+                }
+                
+                document.getElementById("answer").innerHTML = a;
+            };
+            
+            submit.addEventListener("click", calculate);
+        </script>
+        
+    </body>
+</html>
