@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
@@ -30,7 +30,7 @@
                 gallons = parseFloat(document.getElementById("gallons").value);
                 
                 if (begOdometer > endOdometer) {
-                    a = "Did you drive backwards?";
+                    a = "Ending should be higher than beginning.";
                 } else {
                     a = (endOdometer - begOdometer) / gallons;
                 }
