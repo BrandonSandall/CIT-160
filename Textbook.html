@@ -14,8 +14,16 @@ margin-block-end: 0px;
 font-size:1.2em;
 }
 
-#topLinks a {
-padding:0 9px 0 9px;
+div.demo {
+    display:table;
+    width:100%;
+    table-layout: fixed;
+}
+div.demo a {
+    display:table-cell;
+    text-align:center;
+    color:blue;
+    text-decoration:none;
 }
 </style>
 
@@ -23,7 +31,7 @@ padding:0 9px 0 9px;
 <body>
 <div style="padding:0 0 0 20px;">
 
-<div id="topLinks">
+<div id="topLinks" class="demo">
 <a href="https://byui.instructure.com/courses/61812/modules/items/5644186" target="_blank">Chapter 1</a>
 <a href="https://byui.instructure.com/courses/61812/modules/items/5644192" target="_blank">Chapter 2</a>
 <a href="https://byui.instructure.com/courses/61812/modules/items/5644214" target="_blank">Chapter 3</a>
