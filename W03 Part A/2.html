@@ -9,13 +9,12 @@
 
  <form>
  <p>Beginning odometer:
- <input id="begOdometer" type="number" required></p>
+ <input type="text" id="begOdometer" required></p>
  <p>Ending odometer:
- <input id="endOdometer" type="number" required></p>
+ <input type="text" id="endOdometer" required></p>
  <p>Gallons of gasoline:
- <input id="gallons" type="number" required></p>
+ <input type="text" id="gallons" required></p>
  <button type="button" onclick="calculate()">Calculate</button>
- <p>Miles per gallon: <span id="answer"></span></p>
  </form>
 
  <script>
@@ -39,5 +38,7 @@
  };
  </script>
 
+	<p>Miles per gallon: <div id="answer"></div></p>
+ 
  </body>
 </html>

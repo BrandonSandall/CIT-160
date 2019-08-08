@@ -7,11 +7,9 @@
     <body>
        <form>
            <p>Enter volume in quarts:</p>
-           <input id="quarts" type="number" required>
+           <input type="text" id="quarts" required>
            
            <button type="button" onclick="calculate()">Submit</button>
-                
-           <p>Conversion to liters: <span id="answer"></span></p>
         </form>
         
         <script>
@@ -27,6 +25,6 @@
             };
             
         </script>
-        
+    <p>Conversion to liters: <div id="answer"></div></p>
     </body>
 </html>
