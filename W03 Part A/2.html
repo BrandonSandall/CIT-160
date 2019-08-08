@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="utf-8">
-        <title>Mileage</title>
-    </head>
-    <body>
+ <head>
+ <meta charset="utf-8">
+ <title>Mileage</title>
+ </head>
 
-        <form>
-           <p>Beginning odometer:</p>
-           <input id="begOdometer" type="number" required>
-           <p>Ending odometer:</p>
-           <input id="endOdometer" type="number" required>
-           <p>Gallons of gasoline:</p>
-           <input id="gallons" type="number" required>
-           <button type="button" onclick="calculate()">Calculate</button>
-           <p>Miles per gallon: <span id="answer"></span></p>
-        </form>
-       
-        
-        <script>
-            var begOdometer,
-                endOdometer,
-                gallons,
-                a;
-            
-            function calculate() {
-                begOdometer = parseFloat(document.getElementById("begOdometer").value);
-                endOdometer = parseFloat(document.getElementById("endOdometer").value);
-                gallons = parseFloat(document.getElementById("gallons").value);
-                
-                if (begOdometer > endOdometer) {
-                    a = "Ending should be higher than beginning.";
-                } else {
-                    a = (endOdometer - begOdometer) / gallons;
-                }
-                
-                document.getElementById("answer").innerHTML = a;
-            };
-            
-        </script>
-        
-    </body>
+ <body>
+
+ <form>
+ <p>Beginning odometer:
+ <input id="begOdometer" type="number" required></p>
+ <p>Ending odometer:
+ <input id="endOdometer" type="number" required></p>
+ <p>Gallons of gasoline:
+ <input id="gallons" type="number" required></p>
+ <button type="button" onclick="calculate()">Calculate</button>
+ <p>Miles per gallon: <span id="answer"></span></p>
+ </form>
+
+ <script>
+ var begOdometer,
+ endOdometer,
+ gallons,
+ a;
+
+ function calculate() {
+ begOdometer = parseFloat(document.getElementById("begOdometer").value);
+ endOdometer = parseFloat(document.getElementById("endOdometer").value);
+ gallons = parseFloat(document.getElementById("gallons").value);
+
+ if (begOdometer > endOdometer) {
+ a = "Ending should be higher than beginning.";
+ } else {
+ a = (endOdometer - begOdometer) / gallons;
+ }
+
+ document.getElementById("answer").innerHTML = a;
+ };
+ </script>
+
+ </body>
 </html>
