@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Absolute Difference</title>
+    </head>
+<body>
+
+<input id= "first" type="number" Placeholder="1st Number">
+<br>
+<br>
+<input id= "second" type="number" Placeholder="2nd Number">
+<br>
+<br>
+<button type="button" onclick="absoluteDifference()">Submit</button>
+<br>
+<br>
+<div id="difference"></div>
+<script>
+function absoluteDifference(first, second) {
+            var first = parseInt
+            (document.getElementById('first').value);
+            var second = parseInt
+            (document.getElementById('second').value);
+    		var math = Math.abs(first-second);
+    
+    
+ document.getElementById('difference').innerHTML = "Difference = " + math;
+}
+
+</script>
+
+</body>
+</html> 
