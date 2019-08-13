@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple Arithmetic</title>
+	<style>
+    
+    .centerMe {
+    text-align:center;
+    }
+    
+    .smallWidth {
+    width:30px;
+    padding-left:10px;
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <form>
+        <p style="font-size:25px;"><b>Test Your Math Skills!</b></p>
+        <input type="number" id="firstNum" class="centerMe smallWidth" placeholder="2">
+		<input type="text" id="operator" class="centerMe" size ="1" placeholder="*">
+        <input type="number" id="secondNum" class="centerMe smallWidth" placeholder="3">
+        =
+        <input type="number" id="answer" class="centerMe smallWidth" placeholder="6">
+        <br>
+        <button type="button" onclick="calculate()">Submit</button>
+    </form>
+
+    <script>
+        function calculate() {
+		
+        var first = document.getElementById("firstNum").value,
+            second = document.getElementById("operator").value,
+            third = document.getElementById("secondNum").value,
+            fourth = document.getElementById("answer").value;
+
+            document.getElementById("isItRight").innerHTML = first;
+        };
+
+    </script>
+    <p><div id="isItRight"></div>
+</body>
+
+</html>
