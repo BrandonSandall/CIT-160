@@ -18,19 +18,14 @@
         function doIt() {
 
             var weather = document.getElementById("weather").value;
-            switch (weather) {
-                case "hot":
-                    footwear = "sandals";
-                    break;
-                case "rain":
-                    footwear = "galoshes";
-                    break;
-                case "snow":
-                    footwear = "boots";
-                    break;
-                default:
-                    footwear = "shoes";
-                    break;
+            if (weather == "hot") {
+                footwear = "sandals";
+            } else if (weather == "rain") {
+                footwear = "galoshes";
+            } else if (weather == "snow") {
+                footwear = "boots";
+            } else {
+                footwear = "shoes";
             }
 
             document.getElementById("output").innerHTML = footwear;
