@@ -34,15 +34,15 @@
     <script>
         function calculate() {
 		
-        var first = document.getElementById("firstNum").value,
+        var first = parseFloat(document.getElementById("firstNum").value),
             second = document.getElementById("operator").value,
-            third = document.getElementById("secondNum").value,
-            fourth = document.getElementById("answer").value;
+            third = parseFloat(document.getElementById("secondNum").value),
+            fourth = parseFloat(document.getElementById("answer").value);
             
-        var multiplication = (first * third),
-        	division = (first / third),
-            addition = (first + third),
-            subtraction = (first - third);
+        var multiplication = first * third,
+        	division = first / third,
+            addition = first + third,
+            subtraction = first - third;
         
         if (second == "*") {
         	if (fourth = multiplication)
