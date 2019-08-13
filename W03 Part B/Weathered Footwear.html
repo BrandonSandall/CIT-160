@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Weathered Footwear</title>
+    </head>
+    <body>
+       <form>
+           <p>How's the weather?</p>
+           <input type="text" id="weather" required>
+           
+           <button type="button" onclick="doIt()">Submit</button>
+        </form>
+        
+        <script>
+	function doIt() {
+
+    var weather = document.getElementById("weather").value;
+    switch (weather) {
+        case 'hot':
+            footwear = "sandals";
+            break;
+        case 'rain':
+            footwear = "galoshes";
+            break;
+        case 'snow':
+            footwear = "boots";
+            break;
+        default:
+            footwear = "shoes";
+            break;
+    	}
+    
+    document.getElementById("output").innerHTML = footwear;  
+    };
+        </script>
+    <p>Wear these: <div id="output"></div></p>
+    </body>
+</html>
