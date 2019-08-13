@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="utf-8">
-        <title>Quarts to liters</title>
-    </head>
-    <body>
-       <form>
-           <p>Enter volume in quarts:</p>
-           <input type="text" id="quarts" required>
-           
-           <button type="button" onclick="calculate()">Submit</button>
-        </form>
-        
-        <script>
-            var quarts,
-                answer,
-                liters = .946353;
-            
-            function calculate() {
-                quarts = parseFloat(document.getElementById("quarts").value);
-                answer = quarts * liters;
-                answer = Math.round(100 * answer)/100;
-                document.getElementById("answer").innerHTML = answer;
-            };
-            
-        </script>
-    <p>Conversion to liters: <div id="answer"></div></p>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quarts to liters</title>
+</head>
+
+<body>
+    <form>
+        <p>Enter volume in quarts:</p>
+        <input type="text" id="quarts" required>
+
+        <button type="button" onclick="calculate()">Submit</button>
+    </form>
+
+    <script>
+        var quarts,
+            answer,
+            liters = .946353;
+
+        function calculate() {
+            quarts = parseFloat(document.getElementById("quarts").value);
+            answer = quarts * liters;
+            answer = Math.round(100 * answer) / 100;
+            document.getElementById("answer").innerHTML = answer;
+        };
+
+    </script>
+    <p>Conversion to liters: <div id="answer"></div>
+    </p>
+</body>
+
 </html>
