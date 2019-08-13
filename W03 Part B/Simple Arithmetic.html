@@ -38,8 +38,11 @@
             second = document.getElementById("operator").value,
             third = document.getElementById("secondNum").value,
             fourth = document.getElementById("answer").value;
-
-            document.getElementById("isItRight").innerHTML = first;
+        
+        if (second == "*") {
+        	document.getElementById("isItRight").innerHTML = first
+        }
+        
         };
 
     </script>
