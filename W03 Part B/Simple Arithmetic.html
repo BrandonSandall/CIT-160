@@ -44,39 +44,22 @@
             addition = first + third,
             subtraction = first - third;
         
-        if (second == "*") {
-        	if (fourth = multiplication)
+        if ((second == "*") && (fourth == multiplication)) {
             text = "Correct! Good job!";
-        } else if (second == "/") {
-        	if (fourth = division)
+        } else if ((second == "/") && (fourth == division)) {
             text = "Correct! Good job!";
-        } else if (second == "+") {
-        	if (fourth = addition)
+        } else if ((second == "+" && fourth == addition)) {
             text = "Correct! Good job!";
-        } else if (second == "-") {
-        	if (fourth = subtraction)
+        } else if ((second == "-" && fourth == subtraction)) {
             text = "Correct! Good job!";
         } else {
         	text = "Incorrect! Try again!";
         }
         
-        /*switch (second) {
-          case "*":
-            fourth = multiplication;
-            text = "Off";
-            break;
-          case "/":
-            text = "On";
-            break;
-          case "+":
-            text = "On";
-            break;
-          case "-":
-            text = "On";
-            break;
-          default:
-            text = "No value found";
-        }*/
+        if (!(second == "*" || second == "/" || second == "+" || second == "-")) {
+        	text = "Please use one of these operands: * / + -";
+        }
+
         document.getElementById("isItRight").innerHTML = text;
 	}
     </script>
