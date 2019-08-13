@@ -38,13 +38,47 @@
             second = document.getElementById("operator").value,
             third = document.getElementById("secondNum").value,
             fourth = document.getElementById("answer").value;
+            
+        var multiplication = first * third,
+        	division = first / third,
+            addition = first + third,
+            subtraction = first - third;
         
         if (second == "*") {
-        	document.getElementById("isItRight").innerHTML = first
+        	if (fourth = multiplication)
+            text = "Correct! Good job!";
+        } else if (second == "/") {
+        	if (fourth = division)
+            text = "Correct! Good job!";
+        } else if (second == "+") {
+        	if (fourth = addition)
+            text = "Correct! Good job!";
+        } else if (second == "-") {
+        	if (fourth = subtraction)
+            text = "Correct! Good job!";
+        } else {
+        	text = "Incorrect! Try again!";
         }
         
-        };
-
+        /*switch (second) {
+          case "*":
+            fourth = multiplication;
+            text = "Off";
+            break;
+          case "/":
+            text = "On";
+            break;
+          case "+":
+            text = "On";
+            break;
+          case "-":
+            text = "On";
+            break;
+          default:
+            text = "No value found";
+        }*/
+        document.getElementById("isItRight").innerHTML = text;
+	}
     </script>
     <p><div id="isItRight"></div>
 </body>
