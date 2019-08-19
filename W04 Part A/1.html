@@ -19,10 +19,16 @@
 
             var dayOfWeek = new Date().getDay();
             var subTotal = parseFloat(document.getElementById("subtotal").value);
+            var answer;
+            var tax = 1.06;
 
+            if ((dayOfWeek == 2 || dayOfWeek == 3) && subTotal > 50) {
+                answer = (subTotal-(subTotal*.1))*tax;
+            } else {
+                answer = subTotal * tax;
+            }
 
-
-            document.getElementById("output").innerHTML = "$" + footwear;
+            document.getElementById("output").innerHTML = "$" + answer;
         };
     </script>
     Subtotal = <div id="output"></div>
