@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sleep In?</title>
+</head>
+
+<body>
+    <form>
+        <p>Customer's Subtotal</p>
+        <input type="text" id="subtotal" required>
+
+        <button type="button" onclick="doIt()">Submit</button>
+    </form>
+
+    <script>
+        function doIt() {
+
+            var dayOfWeek = new Date().getDay();
+            var subTotal = parseFloat(document.getElementById("subtotal").value);
+            var answer;
+            var tax = 1.06;
+
+            if ((dayOfWeek == 2 || dayOfWeek == 3) && subTotal > 50) {
+                answer = (subTotal-(subTotal*.1))*tax;
+            } else {
+                answer = subTotal * tax;
+            }
+
+            document.getElementById("output").innerHTML = "$" + answer.toFixed(2);
+        };
+    </script>
+    Subtotal = <div id="output"></div>
+</body>
+
+</html>
