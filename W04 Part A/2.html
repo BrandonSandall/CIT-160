@@ -8,30 +8,27 @@
 
 <body>
     <form>
-        <p>Customer's Subtotal</p>
-        <input type="text" id="subtotal" required>
-
+        <p>Should you sleep in?</p>
         <button type="button" onclick="doIt()">Submit</button>
     </form>
 
     <script>
         function doIt() {
 
-            var dayOfWeek = new Date().getDay();
-            var subTotal = parseFloat(document.getElementById("subtotal").value);
-            var answer;
-            var tax = 1.06;
+            var month = now.getMonth();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.getDay();
 
-            if ((dayOfWeek == 2 || dayOfWeek == 3) && subTotal > 50) {
-                answer = (subTotal-(subTotal*.1))*tax;
+            if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                message = "Get up!";
             } else {
-                answer = subTotal * tax;
+                message = "Sleep in.";
             }
 
-            document.getElementById("output").innerHTML = "$" + answer.toFixed(2);
+            document.getElementById("output").innerHTML = message;
         };
     </script>
-    Subtotal = <div id="output"></div>
+    <div id="output"></div>
 </body>
 
 </html>
