@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sleep In?</title>
+</head>
+
+<body>
+    <form>
+        <button type="button" onclick="doIt()">Sleep in?</button>
+    </form>
+
+    <script>
+        function doIt() {
+
+            var now = new Date();
+            var month = now.getMonth();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.getDay();
+
+            if ((month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth == 25)) {
+                message = "Sleep in.";
+            } else if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+                message = "Get up!";
+            } else {
+                message = "Sleep in.";
+            }
+
+            document.getElementById("output").innerHTML = message;
+        };
+    </script>
+    <div id="output"></div>
+</body>
+
+</html>
