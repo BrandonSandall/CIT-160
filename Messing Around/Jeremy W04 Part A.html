@@ -5,18 +5,19 @@
 <meta charset="utf-8">
 <title>Increasing sales</title>
 <script>
-var dayOfWeek = now.getDay();
-var input = parseFloat(getElementById('inputBox'.value));
+
 function begin() {
-var answer;
+    var dayOfWeek = new Date().getDay();
+    var input = parseFloat(document.getElementById("inputBox").value);
+    var answer;
 if ((dayOfWeek == 1) || (dayOfWeek == 4) || ((dayOfWeek==2)||(dayOfWeek==3)&&(input <= 50))) {
-answer = "1.06 * input";
+answer = 1.06 * input;
 }
 else {
 var sub = .9 * input;
-answer = "1.06 * sub";
+answer = 1.06 * sub;
 }
-document.getElementById('outputDiv').innerHTML = answer;
+document.getElementById('outputDiv').innerHTML = answer.toFixed(2);
 }
 
 </script>
@@ -24,7 +25,7 @@ document.getElementById('outputDiv').innerHTML = answer;
 
 <body>
 <input type="text" id="inputBox">
-<button type="button" onclick='begin()'>Button</button>
+<button type="button" onclick="begin()">Button</button>
 <div id='outputDiv'></div>
 </body>
 
