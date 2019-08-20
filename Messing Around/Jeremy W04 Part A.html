@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Increasing sales</title>
+<script>
+var dayOfWeek = now.getDay();
+var input = parseFloat(getElementById('inputBox'.value));
+function begin() {
+var answer;
+if ((dayOfWeek == 1) || (dayOfWeek == 4) || ((dayOfWeek==2)||(dayOfWeek==3)&&(input <= 50))) {
+answer = "1.06 * input";
+}
+else {
+var sub = .9 * input;
+answer = "1.06 * sub";
+}
+document.getElementById('outputDiv').innerHTML = answer;
+}
+
+</script>
+</head>
+
+<body>
+<input type="text" id="inputBox">
+<button type="button" onclick='begin()'>Button</button>
+<div id='outputDiv'></div>
+</body>
+
+</html>
