@@ -12,15 +12,19 @@
 */
 
 function TotalAmountDue (){
-var dayOfWeek = new date().getDay()
+var dayOfWeek = new Date().getDay();
 var Subtotal = document.getElementById("Subtotal").value;
-if (dayOfWeek == 2 || dayOfWeek == 3 && Subtotal >50); {
-var TotalAmount = (Subtotal * .9) * 1.06}
+var TotalAmount;
+
+if (dayOfWeek == 2 || dayOfWeek == 3 && Subtotal > 50) {
+	TotalAmount = (Subtotal * .9) * 1.06;
+}
 else {
-var TotalAmount = Subtotal * 1.06}
+	TotalAmount = Subtotal * 1.06;
+}
 
 
-document.getElementById("outputDiv").innerHTML = TotalAmount
+document.getElementById("outputDiv").innerHTML = TotalAmount;
 }
 
 </script>
