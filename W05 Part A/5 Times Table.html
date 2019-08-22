@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>5 Times Table</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="userInput">
+        <button type="button" onclick="doIt()">Use quantum physics</button>
+    </form>
+
+    <script>
+        function doIt() {
+            var n = parseInt(document.getElementById("userInput").value);
+            var i = 1;
+            var storedNumber = 0;
+
+            while (i <= n) {
+                storedNumber += i;
+                i = i + 2;
+            }
+            document.getElementById("output").innerHTML = storedNumber;
+        };
+    </script>
+    <div id="output"></div>
+</body>
+
+</html>
