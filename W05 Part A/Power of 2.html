@@ -8,24 +8,28 @@
 
 <body>
     <form>
-        <input type="text" id="userInput">
         <button type="button" onclick="doIt()">Use quantum physics</button>
     </form>
 
     <script>
         function doIt() {
-            var n = parseInt(document.getElementById("userInput").value);
-            var i = 1;
-            var storedNumber = 0;
+            var n = 2;
+            var i = 0;
+            var message = "";
 
-            while (i <= n) {
-                storedNumber += i;
-                i = i + 2;
+            while (i <= 31) {
+                message += Math.pow(n, i) + "<br>";
+                i++;
             }
-            document.getElementById("output").innerHTML = storedNumber;
+            document.getElementById("output").innerHTML = message;
         };
     </script>
     <div id="output"></div>
-</body>
 
+</body>
 </html>
+
+<!--
+    Write a defining table and a program to display all powers of 2 from 2^0
+up to 2^31, inclusive. In other words, your program should output this
+series: 1, 2, 4, 8, … 2147483648-->

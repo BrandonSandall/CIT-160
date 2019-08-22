@@ -8,21 +8,21 @@
 
 <body>
     <form>
-        <input type="text" id="userInput">
         <button type="button" onclick="doIt()">Use quantum physics</button>
     </form>
 
     <script>
         function doIt() {
-            var n = parseInt(document.getElementById("userInput").value);
+            var n = 5;
             var i = 1;
-            var storedNumber = 0;
+            var message = "";
 
-            while (i <= n) {
-                storedNumber += i;
-                i = i + 2;
+            while (i <= 12) {
+                message += "5 x " + i + " = " + n + "<br>";
+                n += 5;
+                i += 1;
             }
-            document.getElementById("output").innerHTML = storedNumber;
+            document.getElementById("output").innerHTML = message;
         };
     </script>
     <div id="output"></div>
