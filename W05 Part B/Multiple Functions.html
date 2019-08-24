@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Multiple Functions</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="temp" placeholder="Temperature">
+        <br>
+        <input type="text" id="windSpeed" placeholder="Wind Speed">
+        <br>
+        <button type="button" onclick="doInputOutput()">Wind Chill</button>
+    </form>
+
+    <script>
+
+        function doInputOutput() {
+            var tempF = parseFloat(document.getElementById("temp").value),
+                speed = parseFloat(document.getElementById("windSpeed").value);
+            var mathIt = windchill(tempF, speed);
+            document.getElementById('output').innerHTML = mathIt;
+        }
+
+        function windchill(tempF, speed) {
+            return (35.74+.6215*tempF-35.75*Math.pow(speed, .16)+.4275*tempF*Math.pow(speed, .16)).toFixed(2);
+        }
+
+    </script>
+    <div id="output"></div>
+
+</body>
+
+</html>
