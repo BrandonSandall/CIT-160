@@ -7,25 +7,36 @@
 </head>
 
 <body>
+    <h1>Investment Calculator</h1>
     <form>
-        <input type="text" id="temp" placeholder="Temperature">
+        Amount invested (principal)
+        <input type="text" id="invested">
         <br>
-        <input type="text" id="windSpeed" placeholder="Wind Speed">
+        Annual rate (example: .08)
+        <input type="text" id="rate">
         <br>
-        <button type="button" onclick="doInputOutput()">Wind Chill</button>
+        Number of years
+        <input type="text" id="years">
+        <br>
+        Periods per year
+        <input type="text" id="periods">
+        <br>
+        <button type="button" onclick="doFV()">Compute future value</button>
     </form>
 
     <script>
 
-        function doInputOutput() {
-            var tempF = parseFloat(document.getElementById("temp").value),
-                speed = parseFloat(document.getElementById("windSpeed").value);
-            var mathIt = windChill(tempF, speed);
-            document.getElementById('output').innerHTML = mathIt;
+        function doFV() {
+            var invested = parseFloat(document.getElementById("invested").value),
+                rate = parseFloat(document.getElementById("rate").value),
+                years = parseFloat(document.getElementById("years").value),
+                periods = parseFloat(document.getElementById("periods").value);
+            var mathIt = computeFutureValue(invested, rate, years, periods);
+            document.getElementById('output').innerHTML = "$" + mathIt;
         }
 
-        function windChill(tempF, speed) {
-            return (35.74+.6215*tempF-35.75*Math.pow(speed, .16)+.4275*tempF*Math.pow(speed, .16)).toFixed(2);
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            return (principal*Math.pow((1+(annualRate/periodsPerYear)),periodsPerYear*years)).toFixed(2);
         }
 
     </script>
