@@ -3,44 +3,68 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Investment Calculator</title>
+    <title>Loan Calculator</title>
 </head>
 
 <body>
-    <h1>Investment Calculator</h1>
+    <h1>Loan Calculator</h1>
     <form>
         Amount invested (principal)
         <input type="text" id="invested">
         <br>
-        Annual rate (example: .08)
+        Annual interest rate (example: .065)
         <input type="text" id="rate">
         <br>
         Number of years
         <input type="text" id="years">
         <br>
-        Periods per year
-        <input type="text" id="periods">
+        Payments per year
+        <input type="text" id="payments">
         <br>
-        <button type="button" onclick="doFV()">Compute future value</button>
+        <button type="button" onclick="doPayment()">Compute payment</button>
+        <div id="output"></div>
+        <br>
+        Number of payments paid to date
+        <input type="text" id="paidToDate">
+        <br>
+        <button type="button" onclick="dobalance()">Compute payment amount</button>
+        <div id="output2"></div>
     </form>
 
     <script>
 
-        function doFV() {
+        function doPayment() {
             var invested = parseFloat(document.getElementById("invested").value),
                 rate = parseFloat(document.getElementById("rate").value),
                 years = parseFloat(document.getElementById("years").value),
-                periods = parseFloat(document.getElementById("periods").value);
-            var mathIt = computeFutureValue(invested, rate, years, periods);
+                payments = parseFloat(document.getElementById("payments").value);
+            var mathIt = computePayment(invested, rate, years, payments);
             document.getElementById('output').innerHTML = "$" + mathIt;
         }
 
-        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
-            return (principal*Math.pow((1+(annualRate/periodsPerYear)),periodsPerYear*years)).toFixed(2);
+        function dobalance () {
+            var invested = parseFloat(document.getElementById("invested").value),
+                rate = parseFloat(document.getElementById("rate").value),
+                years = parseFloat(document.getElementById("years").value),
+                payments = parseFloat(document.getElementById("payments").value),
+                paidToDate = parseFloat(document.getElementById("paidToDate").value);
+            var mathIt = computeBalance (invested, rate, years, payments, paidToDate);
+            document.getElementById('output2').innerHTML = "$" + mathIt;
+        }
+
+        function computePayment (principal, annualRate, years, periodsPerYear) {
+            var r = annualRate/periodsPerYear;
+            return ((principal*r)/(1-(Math.pow((1+r), -(periodsPerYear*years))))).toFixed(2);
+        }
+
+        function computeBalance (principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+            var r = annualRate/periodsPerYear;
+            var p = (principal*r)/(1-(Math.pow((1+r), -(periodsPerYear*years))));
+            var rd = Math.pow((1+r),numberOfPaymentPaidToDate);
+            return ((principal*rd)-((p*(rd-1))/r)).toFixed(2);
         }
 
     </script>
-    <div id="output"></div>
 
 </body>
 
