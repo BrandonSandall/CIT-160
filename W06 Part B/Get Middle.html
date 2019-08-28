@@ -23,7 +23,17 @@
             }
 
             document.getElementById("output").innerHTML = "[" + data.toString() + "]";
-            document.getElementById("output2").innerHTML = data[0] + data[data.length - 1];
+
+            if ((data.length % 2) == 0) {
+                var z = (data.length / 2) - 1,
+                    q = data.length / 2,
+                    r = (data[z] + data[q]) / 2;
+                document.getElementById("output2").innerHTML = r;
+
+            } else {
+                var t = Math.floor(data.length / 2);
+                document.getElementById("output2").innerHTML = data[t].toString();
+            }
         }
 
     </script>
