@@ -8,28 +8,31 @@
 
 <body>
     <form>
-        <input type="text" id="temp" placeholder="Temperature">
-        <br>
-        <input type="text" id="windSpeed" placeholder="Wind Speed">
-        <br>
-        <button type="button" onclick="doInputOutput()">Wind Chill</button>
+        <button type="button" onclick="getMiddle()">Get Middle</button>
     </form>
 
     <script>
 
-        function doInputOutput() {
-            var tempF = parseFloat(document.getElementById("temp").value),
-                speed = parseFloat(document.getElementById("windSpeed").value);
-            var mathIt = windChill(tempF, speed);
-            document.getElementById('output').innerHTML = mathIt;
-        }
+        function getMiddle(list) {
+            var y = Math.round(Math.random() * 8 + 2),
+                data = new Array(y),
+                x;
 
-        function windChill(tempF, speed) {
-            return (35.74+.6215*tempF-35.75*Math.pow(speed, .16)+.4275*tempF*Math.pow(speed, .16)).toFixed(2);
+            for (x = 0; x < data.length; x++) {
+                data[x] = Math.round(Math.random() * 20);
+            }
+
+            document.getElementById("output").innerHTML = "[" + data.toString() + "]";
+            document.getElementById("output2").innerHTML = data[0] + data[data.length - 1];
         }
 
     </script>
-    <div id="output"></div>
+    Array
+    <br>
+    <div id="output">[x]</div>
+    <br>
+    Middle
+    <div id="output2">x</div>
 
 </body>
 
