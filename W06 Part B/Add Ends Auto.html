@@ -3,17 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Get Middle</title>
+    <title>Add Ends Auto</title>
 </head>
 
 <body>
     <form>
-        <button type="button" onclick="getMiddle()">Get Middle</button>
+        <button type="button" onclick="addEnds()">Add Ends</button>
     </form>
 
     <script>
 
-        function getMiddle(list) {
+        function addEnds(list) {
             var y = Math.round(Math.random() * 8 + 2),
                 data = new Array(y),
                 x;
@@ -23,17 +23,7 @@
             }
 
             document.getElementById("output").innerHTML = "[" + data.toString() + "]";
-
-            if ((data.length % 2) == 0) {
-                var z = (data.length / 2) - 1,
-                    q = data.length / 2,
-                    r = (data[z] + data[q]) / 2;
-                document.getElementById("output2").innerHTML = r;
-
-            } else {
-                var t = Math.floor(data.length / 2);
-                document.getElementById("output2").innerHTML = data[t].toString();
-            }
+            document.getElementById("output2").innerHTML = data[0] + data[data.length - 1];
         }
 
     </script>
@@ -41,7 +31,7 @@
     <br>
     <div id="output">[x]</div>
     <br>
-    Middle
+    First + Last
     <div id="output2">x</div>
 
 </body>
