@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Add Ends</title>
+</head>
+
+<body>
+    <form>
+        <button type="button" onclick="addEnds()">Add Ends</button>
+    </form>
+
+    <script>
+
+        function addEnds(list) {
+            var y = Math.round(Math.random() * 8 + 2),
+                data = new Array(y),
+                x;
+
+            for (x = 0; x < data.length; x++) {
+                data[x] = Math.round(Math.random() * 20);
+            }
+
+            document.getElementById("output").innerHTML = "[" + data.toString() + "]";
+            document.getElementById("output2").innerHTML = data[0] + data[data.length - 1];
+        }
+
+    </script>
+    Array
+    <br>
+    <div id="output">[x]</div>
+    <br>
+    First + Last
+    <div id="output2">x</div>
+
+</body>
+
+</html>
