@@ -8,31 +8,23 @@
 
 <body>
     <form>
-        <button type="button" onclick="addEnds()">Add Ends</button>
+        <button type="button" onclick="doIt()">Add Ends</button>
     </form>
 
     <script>
 
+        function doIt() {
+            var list = [4, 7, 4, 8, 12],
+                result = addEnds(list);
+            document.getElementById("output").innerHTML = result;
+        }
         function addEnds(list) {
-            var y = Math.round(Math.random() * 8 + 2),
-                data = new Array(y),
-                x;
-
-            for (x = 0; x < data.length; x++) {
-                data[x] = Math.round(Math.random() * 20);
-            }
-
-            document.getElementById("output").innerHTML = "[" + data.toString() + "]";
-            document.getElementById("output2").innerHTML = data[0] + data[data.length - 1];
+            return list[0] + list[list.length - 1];
         }
 
     </script>
-    Array
     <br>
-    <div id="output">[x]</div>
-    <br>
-    First + Last
-    <div id="output2">x</div>
+    <div id="output"></div>
 
 </body>
 

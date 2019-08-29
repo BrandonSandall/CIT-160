@@ -8,41 +8,33 @@
 
 <body>
     <form>
-        <button type="button" onclick="getMiddle()">Get Middle</button>
+        <button type="button" onclick="doIt()">Get Middle</button>
     </form>
 
     <script>
 
+        function doIt() {
+            var list = [12, 4, 8, 15, 17, 5, 20, 11],
+                result = getMiddle(list);
+            document.getElementById("output").innerHTML = result;
+        }
+
         function getMiddle(list) {
-            var y = Math.round(Math.random() * 8 + 2),
-                data = new Array(y),
-                x;
 
-            for (x = 0; x < data.length; x++) {
-                data[x] = Math.round(Math.random() * 20);
-            }
-
-            document.getElementById("output").innerHTML = "[" + data.toString() + "]";
-
-            if ((data.length % 2) == 0) {
-                var z = (data.length / 2) - 1,
-                    q = data.length / 2,
-                    r = (data[z] + data[q]) / 2;
-                document.getElementById("output2").innerHTML = r;
-
+            if ((list.length % 2) == 0) {
+                var z = (list.length / 2) - 1,
+                    q = list.length / 2,
+                    r = (list[z] + list[q]) / 2;
+                return r;
             } else {
-                var t = Math.floor(data.length / 2);
-                document.getElementById("output2").innerHTML = data[t].toString();
+                var t = Math.floor(list.length / 2);
+                return list[t].toString();
             }
         }
 
     </script>
-    Array
     <br>
-    <div id="output">[x]</div>
-    <br>
-    Middle
-    <div id="output2">x</div>
+    <div id="output">x</div>
 
 </body>
 
