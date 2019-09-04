@@ -13,16 +13,27 @@
 
     <script>
 
-        function doIt() {
-            var list = [4, 7, 4, 8, 12],
-                result = addEnds(list);
-            document.getElementById("output").innerHTML = result;
-        }
-        function addEnds(list) {
-            return list[0] + list[list.length - 1];
-        }
-
-    </script>
+            function doIt() {
+                var list = [4, 7, 4, 8, 12],
+                    result = multiply(list, 3);
+                document.getElementById("output").innerHTML = "[" + result + "]";
+            }
+            function multiply(list, multiplier) {
+                var i = 0;
+                var count = 0;
+                var newArray = new Array(list.length);
+                while (i <= list.length - 1) {
+                    if (list[i] % 2 == 0) {
+                        count += 1;
+                        i++;
+                    } else {
+                        i++;
+                    }
+                }
+                return count;
+            }
+    
+        </script>
     <br>
     <div id="output"></div>
 
