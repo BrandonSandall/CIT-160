@@ -15,11 +15,21 @@
 
         function doIt() {
             var list = [4, 7, 4, 8, 12],
-                result = addEnds(list);
+                result = countEvens(list);
             document.getElementById("output").innerHTML = result;
         }
-        function addEnds(list) {
-            return list[0] + list[list.length - 1];
+        function countEvens(list) {
+            var i = 0;
+            var count = 0;
+            while (i <= list.length - 1) {
+                if (list[i] % 2 == 0) {
+                    count += 1;
+                    i++;
+                } else {
+                    i++;
+                }
+            }
+            return count;
         }
 
     </script>
