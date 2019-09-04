@@ -20,17 +20,12 @@
             }
             function multiply(list, multiplier) {
                 var i = 0;
-                var count = 0;
-                var newArray = new Array(list.length);
+                var newArray = [];
                 while (i <= list.length - 1) {
-                    if (list[i] % 2 == 0) {
-                        count += 1;
-                        i++;
-                    } else {
-                        i++;
-                    }
+                    newArray.push(list[i]*multiplier);
+                    i++;
                 }
-                return count;
+                return newArray.toString();
             }
     
         </script>
