@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Even Integers</title>
+</head>
+
+<body>
+    <form>
+        <button type="button" onclick="doIt()">Evenly Count</button>
+    </form>
+
+    <script>
+
+        function doIt() {
+            var list = [4, 7, 4, 8, 12],
+                result = addEnds(list);
+            document.getElementById("output").innerHTML = result;
+        }
+        function addEnds(list) {
+            return list[0] + list[list.length - 1];
+        }
+
+    </script>
+    <br>
+    <div id="output"></div>
+
+</body>
+
+</html>
